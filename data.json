@@ -1,0 +1,68 @@
+{
+  "name": "Đặng Vân Giang (鄧雲江)",
+  "title": "Master's Student in Industrial Engineering & Management | Yuan Ze University",
+  "location": "Taoyuan, Taiwan",
+  "bio": "Information Technology graduate (FPT University), currently a first-year Master's student in Industrial Engineering and Management at Yuan Ze University. Experienced in manufacturing and equipment purchasing (Foxconn).",
+  "education": [
+    {
+      "degree": "Master's Student in Industrial Engineering & Management",
+      "school": "Yuan Ze University, Taiwan",
+      "year": "2025 - Present",
+      "desc": "Focusing on Operations Research and Inventory Management."
+    },
+    {
+      "degree": "Bachelor's Degree in Information Technology",
+      "school": "FPT University, Vietnam",
+      "year": "2019 - 2023",
+      "desc": "Specialized in Software Development."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Assistant",
+      "company": "BigTree Land",
+      "year": "2026",
+      "desc": "Supported administrative tasks and operational workflows."
+    },
+    {
+      "title": "Equipment Purchasing Specialist",
+      "company": "Foxconn",
+      "year": "2024 - 2025",
+      "desc": "Managed supply chain operations, negotiated contracts, and collaborated directly with industrial equipment suppliers."
+    },
+    {
+      "title": "Staff",
+      "company": "FPT Software",
+      "year": "2023 - 2025",
+      "desc": "Applied IT background to practical workflow processes."
+    },
+    {
+      "title": "English Teacher",
+      "company": "Freelance",
+      "year": "Before 2025",
+      "desc": "Taught English classes in Vietnam (TOEIC 915)."
+    }
+  ],
+  "research": [
+    {
+      "title": "Academic Research & Operations Management",
+      "company": "Yuan Ze University",
+      "year": "2025 - Present",
+      "desc": "Conducted specialized research in Operations Research and Inventory Management. Utilized Python, Excel, and VBA for system optimization problems."
+    }
+  ],
+  "skills": [
+    "Operations Research",
+    "Python",
+    "Inventory Management",
+    "Supply Chain",
+    "Excel/VBA"
+  ],
+  "languages": [
+    "Vietnamese: Native",
+    "English: TOEIC 915",
+    "Chinese: B1 (TOCFL)",
+    "French: 3 years in high school",
+    "Korean: 2+ years in university"
+  ]
+}

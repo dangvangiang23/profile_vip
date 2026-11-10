@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ profile.name }} - Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F5EFE6] text-[#212121] overflow-hidden">
+    <!-- Fixed Menu Button -->
+    <button
+      id="menuBtn"
+      class="fixed top-6 left-6 z-50 p-2 text-[#212121] hover:text-gray-500 transition focus:outline-none"
+    >
+      <svg
+        id="iconOpen"
+        class="w-8 h-8 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+      <svg
+        id="iconClose"
+        class="w-8 h-8 hidden transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-[#212121]/30 backdrop-blur-sm z-30 hidden transition-opacity duration-300 opacity-0 cursor-pointer"
+    ></div>
+
+    <!-- Sidebar Navigation -->
+    <nav
+      id="sidebar"
+      class="fixed inset-y-0 left-0 w-72 bg-[#F5EFE6] border-r border-[#212121] z-40 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl"
+    >
+      <div class="p-10 pt-24 flex flex-col gap-6 h-full">
+        <h2
+          class="text-xl font-bold tracking-widest uppercase mb-2 border-b border-[#212121] pb-4"
+          >Navigation</h2
+        >
+        <a
+          href="#"
+          class="nav-link font-semibold text-sm tracking-wider uppercase hover:text-gray-500 transition"
+          >About</a
+        >
+        <a
+          href="#education"
+          class="nav-link font-semibold text-sm tracking-wider uppercase hover:text-gray-500 transition"
+          >Education</a
+        >
+        <a
+          href="#experience"
+          class="nav-link font-semibold text-sm tracking-wider uppercase hover:text-gray-500 transition"
+          >Work Experience</a
+        >
+        <a
+          href="#research"
+          class="nav-link font-semibold text-sm tracking-wider uppercase hover:text-gray-500 transition"
+          >Research Work</a
+        >
+        <a
+          href="#skills"
+          class="nav-link font-semibold text-sm tracking-wider uppercase hover:text-gray-500 transition"
+          >Skills & Languages</a
+        >
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="h-screen overflow-y-auto w-full transition-all duration-300">
+      <div class="p-8 pt-24 md:p-16 md:pt-24 max-w-5xl mx-auto">
+        <!-- Section: Info + Image -->
+        <div class="border border-[#212121] flex flex-col lg:flex-row mb-16">
+          <div
+            class="p-10 lg:p-14 lg:w-3/5 flex flex-col justify-center bg-[#F5EFE6]"
+          >
+            <h1 class="text-4xl lg:text-5xl font-medium tracking-tight mb-4"
+              >{{ profile.name }}</h1
+            >
+            <p
+              class="text-sm font-bold text-gray-600 mb-6 uppercase tracking-wide"
+              >📍 {{ profile.location }}</p
+            >
+            <p class="text-lg leading-relaxed text-gray-800 mb-8"
+              >{{ profile.bio }}</p
+            >
+            <div class="flex gap-6 items-center mt-auto">
+              <span class="font-medium text-sm tracking-wide"
+                >@dangvangiang</span
+              >
+              <span class="text-xl cursor-pointer hover:opacity-70">📷</span>
+              <span class="text-xl cursor-pointer hover:opacity-70">🔗</span>
+              <span class="text-xl cursor-pointer hover:opacity-70">✉️</span>
+            </div>
+          </div>
+          <div
+            class="lg:w-2/5 border-t lg:border-t-0 lg:border-l border-[#212121]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600&h=700"
+              alt="Profile Picture"
+              class="w-full h-full object-cover min-h-[400px]"
+            />
+          </div>
+        </div>
+
+        <!-- 1. EDUCATION -->
+        <details id="education" class="mb-16 group" open>
+          <summary
+            class="flex justify-between items-center cursor-pointer pb-4 border-b border-[#212121] list-none select-none"
+          >
+            <h2 class="text-3xl font-medium tracking-tight">Education</h2>
+            <svg
+              class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <ul class="flex flex-col gap-0 border border-[#212121] mt-6">
+            {% for edu in profile.education %}
+            <li
+              class="p-8 {% if not loop.last %}border-b border-[#212121]{% endif %} hover:bg-[#eae3d7] transition-colors duration-300"
+            >
+              <div
+                class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2"
+              >
+                <h3 class="text-2xl font-semibold">{{ edu.degree }}</h3>
+                <span
+                  class="text-sm font-bold uppercase tracking-wider text-gray-500"
+                  >{{ edu.year }}</span
+                >
+              </div>
+              <div class="text-lg font-medium text-gray-800 mb-3"
+                >{{ edu.school }}</div
+              >
+              <p class="text-gray-700 leading-relaxed">{{ edu.desc }}</p>
+            </li>
+            {% endfor %}
+          </ul>
+        </details>
+
+        <!-- 2. WORK EXPERIENCE -->
+        <details id="experience" class="mb-16 group" open>
+          <summary
+            class="flex justify-between items-center cursor-pointer pb-4 border-b border-[#212121] list-none select-none"
+          >
+            <h2 class="text-3xl font-medium tracking-tight">Work Experience</h2>
+            <svg
+              class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <ul class="flex flex-col gap-0 border border-[#212121] mt-6">
+            {% for exp in profile.experience %}
+            <li
+              class="p-8 {% if not loop.last %}border-b border-[#212121]{% endif %} hover:bg-[#eae3d7] transition-colors duration-300"
+            >
+              <div
+                class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2"
+              >
+                <h3 class="text-2xl font-semibold">{{ exp.title }}</h3>
+                <span
+                  class="text-sm font-bold uppercase tracking-wider text-gray-500"
+                  >{{ exp.year }}</span
+                >
+              </div>
+              <div class="text-lg font-medium text-gray-800 mb-3"
+                >{{ exp.company }}</div
+              >
+              <p class="text-gray-700 leading-relaxed">{{ exp.desc }}</p>
+            </li>
+            {% endfor %}
+          </ul>
+        </details>
+
+        <!-- 3. RESEARCH WORK -->
+        <details id="research" class="mb-16 group" open>
+          <summary
+            class="flex justify-between items-center cursor-pointer pb-4 border-b border-[#212121] list-none select-none"
+          >
+            <h2 class="text-3xl font-medium tracking-tight">Research Work</h2>
+            <svg
+              class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <ul class="flex flex-col gap-0 border border-[#212121] mt-6">
+            {% for res in profile.research %}
+            <li
+              class="p-8 {% if not loop.last %}border-b border-[#212121]{% endif %} hover:bg-[#eae3d7] transition-colors duration-300"
+            >
+              <div
+                class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2"
+              >
+                <h3 class="text-2xl font-semibold">{{ res.title }}</h3>
+                <span
+                  class="text-sm font-bold uppercase tracking-wider text-gray-500"
+                  >{{ res.year }}</span
+                >
+              </div>
+              <div class="text-lg font-medium text-gray-800 mb-3"
+                >{{ res.company }}</div
+              >
+              <p class="text-gray-700 leading-relaxed">{{ res.desc }}</p>
+            </li>
+            {% endfor %}
+          </ul>
+        </details>
+
+        <!-- 4. SKILLS & LANGUAGES -->
+        <details id="skills" class="mb-20 group" open>
+          <summary
+            class="flex justify-between items-center cursor-pointer pb-4 border-b border-[#212121] list-none select-none"
+          >
+            <h2 class="text-3xl font-medium tracking-tight"
+              >Skills & Languages</h2
+            >
+            <svg
+              class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 border border-[#212121] p-8"
+          >
+            <div>
+              <h3
+                class="text-xl font-semibold mb-4 text-gray-900 border-b border-gray-300 pb-2"
+                >🛠️ Professional Skills</h3
+              >
+              <ul class="list-disc list-inside space-y-2 text-gray-700">
+                {% for skill in profile.skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-xl font-semibold mb-4 text-gray-900 border-b border-gray-300 pb-2"
+                >🌐 Languages</h3
+              >
+              <ul class="list-disc list-inside space-y-2 text-gray-700">
+                {% for lang in profile.languages %}
+                <li>{{ lang }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <div class="h-20"></div>
+      </div>
+    </main>
+
+    <!-- JavaScript for Sidebar Menu -->
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const menuBtn = document.getElementById("menuBtn");
+      const iconOpen = document.getElementById("iconOpen");
+      const iconClose = document.getElementById("iconClose");
+      const navLinks = document.querySelectorAll(".nav-link");
+      let isNavOpen = false;
+
+      function toggleNav() {
+        isNavOpen = !isNavOpen;
+        if (isNavOpen) {
+          sidebar.classList.remove("-translate-x-full");
+          overlay.classList.remove("hidden");
+          setTimeout(() => overlay.classList.remove("opacity-0"), 10);
+          iconOpen.classList.add("hidden");
+          iconClose.classList.remove("hidden");
+        } else {
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("opacity-0");
+          setTimeout(() => overlay.classList.add("hidden"), 300);
+          iconOpen.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+        }
+      }
+      menuBtn.addEventListener("click", toggleNav);
+      overlay.addEventListener("click", toggleNav);
+      navLinks.forEach((link) =>
+        link.addEventListener("click", () => {
+          if (isNavOpen) toggleNav();
+        }),
+      );
+    </script>
+  </body>
+</html>
