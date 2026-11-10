@@ -2,13 +2,14 @@
   "name": "Đặng Vân Giang (鄧雲江)",
   "title": "Master's Student in Industrial Engineering & Management | Yuan Ze University",
   "location": "Taoyuan, Taiwan",
-  "bio": "Information Technology graduate (FPT University), currently a first-year Master's student in Industrial Engineering and Management at Yuan Ze University. Experienced in manufacturing and equipment purchasing (Foxconn).",
+  "bio": "Information Technology graduate (FPT University), currently a first-year Master's student in Industrial Engineering and Management at Yuan Ze University. Experienced in manufacturing and equipment purchasing (Foxconn). Advisor: Prof Liang Y.C",
+
   "education": [
     {
       "degree": "Master's Student in Industrial Engineering & Management",
       "school": "Yuan Ze University, Taiwan",
-      "year": "2025 - Present",
-      "desc": "Focusing on Operations Research and Inventory Management."
+      "year": "2026 - Present",
+      "desc": "Focusing on Operations Research and Industrial Data Analysis"
     },
     {
       "degree": "Bachelor's Degree in Information Technology",
@@ -19,36 +20,30 @@
   ],
   "experience": [
     {
-      "title": "Assistant",
-      "company": "BigTree Land",
-      "year": "2026",
-      "desc": "Supported administrative tasks and operational workflows."
-    },
-    {
       "title": "Equipment Purchasing Specialist",
       "company": "Foxconn",
       "year": "2024 - 2025",
       "desc": "Managed supply chain operations, negotiated contracts, and collaborated directly with industrial equipment suppliers."
     },
     {
-      "title": "Staff",
+      "title": "Software Engineer",
       "company": "FPT Software",
-      "year": "2023 - 2025",
-      "desc": "Applied IT background to practical workflow processes."
+      "year": "2024- 2025",
+      "desc": "Software Developer, Full Stack Automation Tester Engineer - Training"
     },
     {
-      "title": "English Teacher",
+      "title": "English Tutor",
       "company": "Freelance",
-      "year": "Before 2025",
+      "year": "2025 - Present",
       "desc": "Taught English classes in Vietnam (TOEIC 915)."
     }
   ],
   "research": [
     {
-      "title": "Academic Research & Operations Management",
-      "company": "Yuan Ze University",
-      "year": "2025 - Present",
-      "desc": "Conducted specialized research in Operations Research and Inventory Management. Utilized Python, Excel, and VBA for system optimization problems."
+      "title": "A Data-Driven Optimization Framework for Academic Course Scheduling and Graduation Planning - Liang Y.-C., Thao P.D., Chalutong M., Dang V.G.",
+      "company": "Conference paper CIIE2026 - Yuanze University",
+      "year": "2026/11/14",
+      "desc": ""
     }
   ],
   "skills": [
