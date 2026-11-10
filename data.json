@@ -2,20 +2,22 @@
   "name": "Đặng Vân Giang (鄧雲江)",
   "title": "Master's Student in Industrial Engineering & Management | Yuan Ze University",
   "location": "Taoyuan, Taiwan",
-  "bio": "Information Technology graduate (FPT University), currently a first-year Master's student in Industrial Engineering and Management at Yuan Ze University. Experienced in manufacturing and equipment purchasing (Foxconn). Advisor: Prof Liang Y.C",
+  "bio": "Information Technology graduate (FPT University), currently a first-year Master's student in Industrial Engineering and Management at Yuan Ze University. \n Experienced in manufacturing and equipment purchasing (Foxconn). ",
 
   "education": [
     {
       "degree": "Master's Student in Industrial Engineering & Management",
       "school": "Yuan Ze University, Taiwan",
       "year": "2026 - Present",
-      "desc": "Focusing on Operations Research and Industrial Data Analysis"
+      "desc": "Focusing on Operations Research and Industrial Data Analysis",
+      "advisor": "Advisor: Prof Liang Y.C."
     },
     {
       "degree": "Bachelor's Degree in Information Technology",
       "school": "FPT University, Vietnam",
       "year": "2019 - 2023",
-      "desc": "Specialized in Software Development."
+      "advisor": "",
+      "desc": "Specialized in Software Development"
     }
   ],
   "experience": [
@@ -59,5 +61,10 @@
     "Chinese: B1 (TOCFL)",
     "French: 3 years in high school",
     "Korean: 2+ years in university"
+  ],
+  "interests": [
+    "Industrial Engineering",
+    "Data Analysis",
+    "Operations Research"
   ]
 }
