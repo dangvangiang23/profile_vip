@@ -98,10 +98,12 @@
     <!-- Main Content -->
     <main class="h-screen overflow-y-auto w-full transition-all duration-300">
       <div class="p-8 pt-24 md:p-16 md:pt-24 max-w-5xl mx-auto">
-        <!-- Section: Info + Image -->
-        <div class="border border-[#212121] flex flex-col lg:flex-row mb-16">
+        <!-- Section: Info + Image (Đã mở rộng ra toàn màn hình thoáng hơn) -->
+        <div
+          class="border border-[#212121] flex flex-col lg:flex-row max-w-7xl mx-auto mb-16"
+        >
           <div
-            class="p-10 lg:p-14 lg:w-3/5 flex flex-col justify-center bg-[#F5EFE6]"
+            class="p-10 lg:p-16 lg:w-3/5 flex flex-col justify-center bg-[#F5EFE6]"
           >
             <h1 class="text-4xl lg:text-5xl font-medium tracking-tight mb-4"
               >{{ profile.name }}</h1
@@ -113,16 +115,18 @@
             <p class="text-lg leading-relaxed text-gray-800 mb-8"
               >{{ profile.bio }}</p
             >
-            <!-- PHẦN KEYWORD BOXES (ĐẶT NGAY DƯỚI BIO) -->
+
+            <!-- Keyword Boxes -->
             <div class="flex flex-wrap gap-3 mb-8">
-              <!-- Bạn có thể copy/paste hoặc dùng vòng lặp Jinja2 sau này -->
               {% for interests in profile.interests %}
               <span
                 class="px-4 py-2 bg-[#E8DFC5] border border-[#D1C7AB] rounded-full text-sm font-medium text-gray-800 shadow-sm transition-transform hover:scale-105 cursor-default"
-                >{{ interests }}
+              >
+                {{ interests }}
               </span>
-              {%endfor %}
+              {% endfor %}
             </div>
+
             <div class="flex gap-6 items-center mt-auto">
               <span class="font-medium text-sm tracking-wide"
                 >@dangvangiang</span
@@ -132,13 +136,14 @@
               <span class="text-xl cursor-pointer hover:opacity-70">✉️</span>
             </div>
           </div>
+
           <div
-            class="lg:w-2/5 border-t lg:border-t-0 lg:border-l border-[#212121]"
+            class="lg:w-2/5 border-t lg:border-t-0 lg:border-l border-[#212121] flex items-center justify-center bg-white"
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkfkniYeDzmiNLLMY6I_TJ9_8Q8L2Ab5Mi8uvVE1G9Xw&s=10"
               alt="Profile Picture"
-              class="w-full h-full object-cover min-h-[400px]"
+              class="w-full h-full object-contain min-h-[120px]"
             />
           </div>
         </div>
@@ -334,10 +339,159 @@
           </div>
         </details>
 
+        <!-- 5. READING PAPERS (CÓ KHÓA MÃ PIN) -->
+        <details id="reading-papers" class="mb-16 group">
+          <summary
+            class="flex justify-between items-center cursor-pointer pb-4 border-b border-[#212121] list-none select-none"
+          >
+            <h2 class="text-3xl font-medium tracking-tight"
+              >Reading Papers 🔒</h2
+            >
+            <svg
+              class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+
+          <div class="mt-6 border border-[#212121] p-8 bg-[#F5EFE6]">
+            <!-- GIAO DIỆN CHƯA NHẬP MÃ (HIỂN THỊ KHI BỊ KHÓA) -->
+            <div
+              id="lockScreen"
+              class="py-12 text-center flex flex-col items-center justify-center"
+            >
+              <div class="text-4xl mb-4">🔐</div>
+              <h3 class="text-xl font-semibold mb-2">Protected Section</h3>
+              <p class="text-gray-600 mb-6 text-sm"
+                >Vui lòng nhập mã PIN cá nhân để xem danh sách nghiên cứu.</p
+              >
+
+              <div class="flex gap-2 max-w-xs w-full">
+                <input
+                  type="password"
+                  id="pinInput"
+                  placeholder="Nhập mã PIN..."
+                  class="w-full p-3 bg-white border border-[#212121] focus:outline-none text-center tracking-widest text-lg rounded-none"
+                />
+                <button
+                  onclick="checkPin()"
+                  class="px-6 bg-[#212121] text-[#F5EFE6] font-medium hover:bg-gray-800 transition"
+                >
+                  Mở
+                </button>
+              </div>
+              <p
+                id="errorMsg"
+                class="text-red-600 text-xs mt-3 hidden font-medium"
+                >Mã PIN không đúng, thử lại đi bồ ơi!</p
+              >
+            </div>
+
+            <!-- NỘI DUNG BÊN TRONG (CHỈ HIỆN KHI NHẬP ĐÚNG MÃ) -->
+            <div id="secureContent" class="hidden">
+              <div
+                class="flex justify-between items-center mb-6 pb-4 border-b border-gray-300"
+              >
+                <span
+                  class="text-sm font-bold uppercase tracking-wider text-green-700"
+                  >🔓 Đã mở khóa thành công</span
+                >
+                <button
+                  onclick="lockAgain()"
+                  class="text-xs text-gray-500 hover:underline uppercase tracking-wider font-semibold"
+                  >Khóa lại</button
+                >
+              </div>
+
+              <!-- Danh sách các paper -->
+              <ul class="flex flex-col gap-0 border border-[#212121]">
+                <li class="p-6 bg-white border-b border-[#212121]">
+                  <div class="flex justify-between items-baseline mb-1">
+                    <h4 class="text-xl font-semibold text-gray-900"
+                      >Inventory routing problems: A review</h4
+                    >
+                    <span
+                      class="text-xs font-bold uppercase tracking-wider bg-[#E8DFC5] px-2 py-1 border border-[#D1C7AB]"
+                      >Đang đọc</span
+                    >
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2"
+                    >Authors: Coelho, J. C., et al. | 2023</p
+                  >
+                  <p class="text-gray-700 text-sm"
+                    >Tập trung nghiên cứu các chiến lược kết hợp quản lý kho
+                    hàng và tối ưu lộ trình vận chuyển.</p
+                  >
+                </li>
+                <li class="p-6 bg-white">
+                  <div class="flex justify-between items-baseline mb-1">
+                    <h4 class="text-xl font-semibold text-gray-900"
+                      >Multi-echelon supply chain optimization</h4
+                    >
+                    <span
+                      class="text-xs font-bold uppercase tracking-wider bg-gray-200 px-2 py-1 border border-gray-400"
+                      >Đã đọc xong</span
+                    >
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2"
+                    >Authors: Yu, V. F., et al. | 2022</p
+                  >
+                  <p class="text-gray-700 text-sm"
+                    >Phân tích các thuật toán heuristic giải quyết bài toán tối
+                    ưu chuỗi cung ứng nhiều tầng.</p
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
         <div class="h-20"></div>
       </div>
     </main>
+    <!-- JAVASCRIPT XỬ LÝ MÃ PIN -->
+    <script>
+      // ĐẶT MÃ PIN CỦA BẠN Ở ĐÂY (Ví dụ đổi thành số bạn muốn)
+      const MY_SECRET_PIN = "2305";
 
+      function checkPin() {
+        const inputVal = document.getElementById("pinInput").value;
+        const lockScreen = document.getElementById("lockScreen");
+        const secureContent = document.getElementById("secureContent");
+        const errorMsg = document.getElementById("errorMsg");
+
+        if (inputVal === MY_SECRET_PIN) {
+          lockScreen.classList.add("hidden");
+          secureContent.classList.remove("hidden");
+          errorMsg.classList.add("hidden");
+          document.getElementById("pinInput").value = ""; // Xóa ô input sau khi mở
+        } else {
+          errorMsg.classList.remove("hidden");
+        }
+      }
+
+      function lockAgain() {
+        document.getElementById("secureContent").classList.add("hidden");
+        document.getElementById("lockScreen").classList.remove("hidden");
+      }
+
+      // Cho phép bấm Enter để submit mã PIN luôn cho tiện
+      document
+        .getElementById("pinInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            checkPin();
+          }
+        });
+    </script>
     <!-- JavaScript for Sidebar Menu -->
     <script>
       const sidebar = document.getElementById("sidebar");

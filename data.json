@@ -2,7 +2,7 @@
   "name": "Đặng Vân Giang (鄧雲江)",
   "title": "Master's Student in Industrial Engineering & Management | Yuan Ze University",
   "location": "Taoyuan, Taiwan",
-  "bio": "Information Technology graduate (FPT University), currently a first-year Master's student in Industrial Engineering and Management at Yuan Ze University. \n Experienced in manufacturing and equipment purchasing (Foxconn). ",
+  "bio": "Information Technology graduate, currently a first-year Master's student in Industrial Engineering and Management at Yuan Ze University. Experienced in manufacturing and equipment purchasing (Foxconn). ",
 
   "education": [
     {
@@ -37,7 +37,7 @@
       "title": "English Tutor",
       "company": "Freelance",
       "year": "2025 - Present",
-      "desc": "Taught English classes in Vietnam (TOEIC 915)."
+      "desc": "Taught English classes"
     }
   ],
   "research": [
@@ -66,5 +66,21 @@
     "Industrial Engineering",
     "Data Analysis",
     "Operations Research"
+  ],
+  "reading-papers": [
+    {
+      "title": "A Data-Driven Optimization Framework for Academic Course Scheduling and Graduation Planning",
+      "authors": "Liang Y.C.*, Thao P.D., Chalutong M., Dang V.G.",
+      "content": "This paper presents a data-driven optimization framework for academic course scheduling and graduation planning.",
+      "status": "Reading",
+      "link": "https://www.researchgate.net/publication/377187905_A_Data-Driven_Optimization_Framework_for_Academic_Course_Scheduling_and_Graduation_Planning"
+    },
+    {
+      "title": "A Data-Driven Optimization Framework for Academic Course Scheduling and Graduation Planning",
+      "authors": "Liang Y.C.*, Thao P.D., Chalutong M., Dang V.G.",
+      "content": "This paper presents a data-driven optimization framework for academic course scheduling and graduation planning.",
+      "status": "Reading",
+      "link": "https://www.researchgate.net/publication/377187905_A_Data-Driven_Optimization_Framework_for_Academic_Course_Scheduling_and_Graduation_Planning"
+    }
   ]
 }
