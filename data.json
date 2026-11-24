@@ -23,21 +23,27 @@
   "experience": [
     {
       "title": "Equipment Purchasing Specialist",
-      "company": "Foxconn",
-      "year": "2024 - 2025",
-      "desc": "Managed supply chain operations, negotiated contracts, and collaborated directly with industrial equipment suppliers."
+      "company": "Fukang - Foxconn",
+      "year": "2025 - 2026",
+      "desc": "Managed equipment purchasing operations, negotiated contracts, and collaborated directly with industrial equipment suppliers."
+    },
+    {
+      "title": "Project Manager",
+      "company": "Fukang - Foxconn",
+      "year": "6/2025- 8/2025",
+      "desc": "Cooperate with different departments to manage and implement projects, ensuring timely delivery and quality standards - Internship "
     },
     {
       "title": "Software Engineer",
       "company": "FPT Software",
       "year": "2024- 2025",
-      "desc": "Software Developer, Full Stack Automation Tester Engineer - Training"
+      "desc": "Software Developer, Full Stack Automation Tester Engineer - On Board Training"
     }
   ],
   "research": [
     {
       "title": "A Data-Driven Optimization Framework for Academic Course Scheduling and Graduation Planning - Liang Y.-C., Thao P.D., Chalutong M., Dang V.G.",
-      "company": "Conference paper CIIE2026 - Yuanze University",
+      "company": "0306 - Conference paper CIIE 2026 - Tsing Hua University, XinZhu, Taiwan",
       "year": "2026/11/14",
       "desc": ""
     }
