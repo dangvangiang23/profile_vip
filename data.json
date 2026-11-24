@@ -32,12 +32,6 @@
       "company": "FPT Software",
       "year": "2024- 2025",
       "desc": "Software Developer, Full Stack Automation Tester Engineer - Training"
-    },
-    {
-      "title": "English Tutor",
-      "company": "Freelance",
-      "year": "2025 - Present",
-      "desc": "Taught English classes"
     }
   ],
   "research": [
@@ -59,13 +53,14 @@
     "Vietnamese: Native",
     "English: TOEIC 915",
     "Chinese: B1 (TOCFL)",
-    "French: 3 years in high school",
-    "Korean: 2+ years in university"
+    "French: 3 years TCF B2",
+    "Korean: 2+ years TOPIK 4"
   ],
   "interests": [
     "Industrial Engineering",
     "Data Analysis",
-    "Operations Research"
+    "Operations Research",
+    "Optimization"
   ],
   "reading-papers": [
     {
