@@ -13,5 +13,10 @@ def home():
     data = get_profile_data()
     return render_template('index.html', profile=data)
 
+@app.route('/languages')
+def languages():
+    data = get_profile_data()
+    return render_template('languages.html', profile=data)
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Languages - Đặng Vân Giang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F5EFE6] text-[#212121] min-h-screen">
+    <!-- Top Header: Back arrow -->
+    <header
+      class="max-w-7xl mx-auto px-6 pt-8 pb-4 flex items-center justify-between"
+    >
+      <a
+        href="/"
+        class="inline-flex items-center gap-3 text-base font-bold uppercase tracking-wider hover:opacity-60 transition"
+        title="Back to Profile"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
+        <span>Profile</span>
+      </a>
+      <span class="text-xs font-bold uppercase tracking-widest text-gray-500"
+        >Language Journal</span
+      >
+    </header>
+
+    <!-- Filter Bar (1 dòng trên đầu) -->
+    <nav class="max-w-7xl mx-auto px-6 pb-4">
+      <div
+        class="border border-[#212121] bg-[#F5EFE6] px-4 py-3 flex flex-wrap items-center gap-2"
+      >
+        <span
+          class="text-xs font-bold uppercase tracking-wider text-gray-500 mr-2"
+          >Filter:</span
+        >
+        <button
+          onclick="filterPosts('all')"
+          data-filter-btn="all"
+          class="filter-btn px-3.5 py-1.5 border border-[#212121] bg-[#212121] text-[#F5EFE6] text-xs font-bold uppercase tracking-wider transition"
+        >
+          All
+        </button>
+        <button
+          onclick="filterPosts('chinese')"
+          data-filter-btn="chinese"
+          class="filter-btn px-3.5 py-1.5 border border-[#212121] bg-[#E8DFC5] text-[#212121] text-xs font-bold uppercase tracking-wider hover:bg-[#dfd3b2] transition"
+        >
+          Chinese
+        </button>
+        <button
+          onclick="filterPosts('french')"
+          data-filter-btn="french"
+          class="filter-btn px-3.5 py-1.5 border border-[#212121] bg-[#E8DFC5] text-[#212121] text-xs font-bold uppercase tracking-wider hover:bg-[#dfd3b2] transition"
+        >
+          French
+        </button>
+        <button
+          onclick="filterPosts('korean')"
+          data-filter-btn="korean"
+          class="filter-btn px-3.5 py-1.5 border border-[#212121] bg-[#E8DFC5] text-[#212121] text-xs font-bold uppercase tracking-wider hover:bg-[#dfd3b2] transition"
+        >
+          Korean
+        </button>
+        <button
+          onclick="filterPosts('indonesian')"
+          data-filter-btn="indonesian"
+          class="filter-btn px-3.5 py-1.5 border border-[#212121] bg-[#E8DFC5] text-[#212121] text-xs font-bold uppercase tracking-wider hover:bg-[#dfd3b2] transition"
+        >
+          Indonesian
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main 3-Column Layout -->
+    <main class="max-w-7xl mx-auto px-6 pb-20 pt-2">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- ================= CỘT 1: CERTIFICATES ================= -->
+        <aside class="lg:col-span-3">
+          <div class="flex items-center justify-between mb-3">
+            <button
+              id="toggleCertBtn"
+              onclick="toggleCertificates()"
+              class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#E8DFC5] border border-[#212121] text-xs font-bold uppercase tracking-wider hover:bg-[#dfd3b2] transition"
+            >
+              <span id="certBtnIcon">▾</span>
+              <span>Certificates</span>
+            </button>
+          </div>
+
+          <div
+            id="certPanel"
+            class="border border-[#212121] bg-[#F5EFE6] p-5 flex flex-col gap-6"
+          >
+            <h2
+              class="text-xl font-semibold tracking-tight border-b border-[#212121] pb-2"
+              >Certificates</h2
+            >
+
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-full aspect-[3/4] border border-[#212121] bg-white overflow-hidden mb-2 cursor-pointer group"
+                onclick="
+                  openLightbox(
+                    'https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=500',
+                  )
+                "
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=500"
+                  alt="TOEIC 915"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p class="text-sm font-semibold"
+                >TOEIC Listening & Reading (915)</p
+              >
+              <span class="text-xs font-medium text-gray-600">2024 - 2026</span>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-full aspect-[3/4] border border-[#212121] bg-white overflow-hidden mb-2 cursor-pointer group"
+                onclick="
+                  openLightbox(
+                    'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=500',
+                  )
+                "
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=500"
+                  alt="TOCFL B1"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p class="text-sm font-semibold">TOCFL Band B1</p>
+              <span class="text-xs font-medium text-gray-600">2026</span>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-full aspect-[3/4] border border-[#212121] bg-white overflow-hidden mb-2 cursor-pointer group"
+                onclick="
+                  openLightbox(
+                    'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=500',
+                  )
+                "
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=500"
+                  alt="TCF B2"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p class="text-sm font-semibold">TCF B2</p>
+              <span class="text-xs font-medium text-gray-600">2021</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ================= CỘT 2: POSTS ================= -->
+        <section id="postsContainer" class="lg:col-span-6 flex flex-col gap-8">
+          <!-- Post Chinese -->
+          <article
+            data-lang="chinese"
+            class="post-card border border-[#212121] bg-white p-6 shadow-sm"
+          >
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span
+                class="px-2.5 py-0.5 bg-[#E8DFC5] border border-[#D1C7AB] rounded-md text-xs font-semibold"
+              >
+                #Chinese
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-gray-500"
+                >Nov 24, 2026</span
+              >
+            </div>
+            <h3
+              class="text-xl font-semibold text-gray-900 mb-3 pb-3 border-b border-gray-200"
+            >
+              Mandarin Hanzi Practice: 默写 (mòxiě)
+            </h3>
+            <p class="text-gray-800 leading-relaxed mb-5">
+              Luyện tập viết chữ Hán từ trí nhớ cho lớp 華語三. Nhìn mặt chữ thì
+              nhận ra ngay mà lúc tự đặt bút viết lại mới thấy dễ quên nét.
+            </p>
+            <div class="grid grid-cols-2 gap-3">
+              <div
+                class="border border-[#212121] overflow-hidden bg-gray-100 cursor-pointer group"
+                onclick="
+                  openLightbox(
+                    'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=700',
+                  )
+                "
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=700"
+                  alt="Sample 1"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div
+                class="border border-[#212121] overflow-hidden bg-gray-100 cursor-pointer group"
+                onclick="
+                  openLightbox(
+                    'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=700',
+                  )
+                "
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=700"
+                  alt="Sample 2"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </article>
+
+          <!-- Post French -->
+          <article
+            data-lang="french"
+            class="post-card border border-[#212121] bg-white p-6 shadow-sm"
+          >
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span
+                class="px-2.5 py-0.5 bg-[#E8DFC5] border border-[#D1C7AB] rounded-md text-xs font-semibold"
+              >
+                #French
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-gray-500"
+                >Oct 15, 2026</span
+              >
+            </div>
+            <h3
+              class="text-xl font-semibold text-gray-900 mb-3 pb-3 border-b border-gray-200"
+            >
+              15-Minute Daily French Revival
+            </h3>
+            <p class="text-gray-800 leading-relaxed mb-5">
+              Dành 15-20 phút mỗi ngày đọc và nghe tiếng Pháp để giữ lại vốn TCF
+              B2 từ hồi cấp 3.
+            </p>
+            <div class="grid grid-cols-1 gap-3">
+              <div
+                class="border border-[#212121] overflow-hidden bg-gray-100 cursor-pointer group"
+                onclick="
+                  openLightbox(
+                    'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=700',
+                  )
+                "
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=700"
+                  alt="Sample 3"
+                  class="w-full max-h-[420px] object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </article>
+
+          <!-- Post Korean -->
+          <article
+            data-lang="korean"
+            class="post-card border border-[#212121] bg-white p-6 shadow-sm"
+          >
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span
+                class="px-2.5 py-0.5 bg-[#E8DFC5] border border-[#D1C7AB] rounded-md text-xs font-semibold"
+              >
+                #Korean
+              </span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-gray-500"
+                >Sep 28, 2026</span
+              >
+            </div>
+            <h3
+              class="text-xl font-semibold text-gray-900 mb-3 pb-3 border-b border-gray-200"
+            >
+              Hangul & Basic Sentence Patterns
+            </h3>
+            <p class="text-gray-800 leading-relaxed">
+              Ghi chú nhanh vài mẫu câu cơ bản và từ vựng đời sống tiếng Hàn.
+            </p>
+          </article>
+
+          <!-- Thông báo khi không có bài thuộc ngôn ngữ được chọn -->
+          <p
+            id="emptyFilterMsg"
+            class="hidden border border-[#212121] bg-white p-6 text-sm text-gray-600 text-center"
+          >
+            Chưa có bài post nào cho ngôn ngữ này.
+          </p>
+        </section>
+
+        <!-- ================= CỘT 3: RESOURCES ================= -->
+        <aside class="lg:col-span-3">
+          <h2
+            class="text-xl font-semibold tracking-tight mb-3 pb-1 border-b border-[#212121] inline-block"
+            >Resources</h2
+          >
+
+          <div
+            class="border border-[#212121] bg-[#F5EFE6] p-5 flex flex-col gap-6"
+          >
+            <div class="pb-5 border-b border-[#212121]/30">
+              <h3
+                class="text-base font-bold uppercase tracking-wider mb-3 text-gray-900"
+                >French</h3
+              >
+              <ul class="space-y-2 text-sm text-gray-800">
+                <li class="flex items-start gap-2"
+                  ><span class="text-gray-500">—</span
+                  ><span>RFI Savoirs - Journal en français facile</span></li
+                >
+                <li class="flex items-start gap-2"
+                  ><span class="text-gray-500">—</span
+                  ><span>TV5MONDE Apprendre</span></li
+                >
+              </ul>
+            </div>
+
+            <div class="pb-5 border-b border-[#212121]/30">
+              <h3
+                class="text-base font-bold uppercase tracking-wider mb-3 text-gray-900"
+                >Korean</h3
+              >
+              <ul class="space-y-2 text-sm text-gray-800">
+                <li class="flex items-start gap-2"
+                  ><span class="text-gray-500">—</span
+                  ><span>TOPIK Vocabulary Notes</span></li
+                >
+                <li class="flex items-start gap-2"
+                  ><span class="text-gray-500">—</span
+                  ><span>Talk To Me In Korean</span></li
+                >
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-base font-bold uppercase tracking-wider mb-3 text-gray-900"
+                >Indonesian</h3
+              >
+              <ul class="space-y-2 text-sm text-gray-800">
+                <li class="flex items-start gap-2"
+                  ><span class="text-gray-500">—</span
+                  ><span>Duolingo Indonesian Notes</span></li
+                >
+                <li class="flex items-start gap-2"
+                  ><span class="text-gray-500">—</span
+                  ><span>Basic Conversational Phrases</span></li
+                >
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Lightbox preview -->
+    <div
+      id="lightbox"
+      onclick="closeLightbox()"
+      class="fixed inset-0 bg-[#212121]/80 backdrop-blur-sm z-50 hidden items-center justify-center p-6 cursor-pointer"
+    >
+      <img
+        id="lightboxImg"
+        src=""
+        alt="Preview"
+        class="max-w-full max-h-[90vh] border-2 border-[#F5EFE6] object-contain"
+      />
+    </div>
+
+    <script>
+      function filterPosts(lang) {
+        const posts = document.querySelectorAll(".post-card");
+        const buttons = document.querySelectorAll(".filter-btn");
+        const emptyMsg = document.getElementById("emptyFilterMsg");
+        let visibleCount = 0;
+
+        buttons.forEach((btn) => {
+          const isSelected = btn.getAttribute("data-filter-btn") === lang;
+          if (isSelected) {
+            btn.classList.remove("bg-[#E8DFC5]", "text-[#212121]");
+            btn.classList.add("bg-[#212121]", "text-[#F5EFE6]");
+          } else {
+            btn.classList.remove("bg-[#212121]", "text-[#F5EFE6]");
+            btn.classList.add("bg-[#E8DFC5]", "text-[#212121]");
+          }
+        });
+
+        posts.forEach((post) => {
+          const postLang = post.getAttribute("data-lang");
+          if (lang === "all" || postLang === lang) {
+            post.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            post.classList.add("hidden");
+          }
+        });
+
+        if (visibleCount === 0) {
+          emptyMsg.classList.remove("hidden");
+        } else {
+          emptyMsg.classList.add("hidden");
+        }
+      }
+
+      let isCertVisible = true;
+      function toggleCertificates() {
+        const panel = document.getElementById("certPanel");
+        const icon = document.getElementById("certBtnIcon");
+        isCertVisible = !isCertVisible;
+
+        if (isCertVisible) {
+          panel.classList.remove("hidden");
+          icon.textContent = "▾";
+        } else {
+          panel.classList.add("hidden");
+          icon.textContent = "▸";
+        }
+      }
+
+      function openLightbox(src) {
+        const lb = document.getElementById("lightbox");
+        document.getElementById("lightboxImg").src = src;
+        lb.classList.remove("hidden");
+        lb.classList.add("flex");
+      }
+
+      function closeLightbox() {
+        const lb = document.getElementById("lightbox");
+        lb.classList.add("hidden");
+        lb.classList.remove("flex");
+      }
+    </script>
+  </body>
+</html>

@@ -326,10 +326,16 @@
               </ul>
             </div>
             <div>
-              <h3
-                class="text-xl font-semibold mb-4 text-gray-900 border-b border-gray-300 pb-2"
-                >🌐 Languages</h3
+              <a
+                href="/languages"
+                class="group inline-flex items-center gap-2 text-xl font-semibold mb-4 text-gray-900 border-b border-gray-300 pb-2 hover:text-gray-600 transition"
               >
+                <span>🌐 Languages</span>
+                <span
+                  class="text-sm transition-transform group-hover:translate-x-1"
+                  >→</span
+                >
+              </a>
               <ul class="list-disc list-inside space-y-2 text-gray-700">
                 {% for lang in profile.languages %}
                 <li>{{ lang }}</li>
